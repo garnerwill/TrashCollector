@@ -167,6 +167,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="chkUser\Succeeded.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
@@ -178,6 +179,10 @@
     <Compile Include="Migrations\201909041504576_FirstMigrations.cs" />
     <Compile Include="Migrations\201909041504576_FirstMigrations.Designer.cs">
       <DependentUpon>201909041504576_FirstMigrations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909041625251_Added Customer and Employees.cs" />
+    <Compile Include="Migrations\201909041625251_Added Customer and Employees.Designer.cs">
+      <DependentUpon>201909041625251_Added Customer and Employees.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -275,6 +280,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201909041504576_FirstMigrations.resx">
       <DependentUpon>201909041504576_FirstMigrations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909041625251_Added Customer and Employees.resx">
+      <DependentUpon>201909041625251_Added Customer and Employees.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
