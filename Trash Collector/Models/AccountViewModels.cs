@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace Trash_Collector.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
+        
         [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
@@ -64,6 +66,9 @@ namespace Trash_Collector.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "UserRoles")]
+        public IEnumerable<SelectListItem> UserRole { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
