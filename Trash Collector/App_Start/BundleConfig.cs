@@ -23,8 +23,8 @@ namespace Trash_Collector
                       "~/Scripts/bootstrap.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap(1).css",
+                      "~/Content/Site.css"));
         }
     }
 }
