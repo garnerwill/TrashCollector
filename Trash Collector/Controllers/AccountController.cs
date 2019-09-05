@@ -20,6 +20,7 @@ namespace Trash_Collector.Controllers
 
         public AccountController()
         {
+            db = new ApplicationDbContext();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -139,6 +140,7 @@ namespace Trash_Collector.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Name = new SelectList(db.Roles.ToList(), "Name", "Name", "-----Select------");
             return View();
         }
 
@@ -153,8 +155,20 @@ namespace Trash_Collector.Controllers
             {
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
+                
                 if (result.Succeeded)
                 {
+                    if (model.UserRole == "Customer")
+                    {
+                        return RedirectToAction("Create", "Customers");
+                    }
+                    else if (model.UserRole == "Employee")
+                    {
+                        return RedirectToAction("Create", "Employees");
+                    }
+
+                    // do here addUserrole add If 
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
@@ -434,6 +448,8 @@ namespace Trash_Collector.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
+
+        public ApplicationDbContext db { get; private set; }
 
         private void AddErrors(IdentityResult result)
         {

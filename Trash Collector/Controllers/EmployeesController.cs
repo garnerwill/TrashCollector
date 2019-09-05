@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -15,7 +16,7 @@ namespace Trash_Collector.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Employees
-        public ActionResult Index()
+        public ActionResult Index() // check asp.net player tracker viedo
         {
             var employees = db.Employees.Include(e => e.ApplicationUser);
             return View(employees.ToList());
@@ -52,6 +53,7 @@ namespace Trash_Collector.Controllers
         {
             if (ModelState.IsValid)
             {
+                employee.ApplicationId = User.Identity.GetUserId();
                 db.Employees.Add(employee);
                 db.SaveChanges();
                 return RedirectToAction("Index");

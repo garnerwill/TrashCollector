@@ -67,8 +67,8 @@ namespace Trash_Collector.Models
     public class RegisterViewModel
     {
         [Required]
-        [Display(Name = "UserRoles")]
-        public IEnumerable<SelectListItem> UserRole { get; set; }
+        [Display(Name = "UserRole")]
+        public string UserRole { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -82,7 +82,7 @@ namespace Trash_Collector.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -101,7 +101,7 @@ namespace Trash_Collector.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [System.ComponentModel.DataAnnotations.Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }
