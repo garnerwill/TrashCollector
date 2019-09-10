@@ -15,9 +15,16 @@ namespace Trash_Collector.Models
         public string LastName { get; set; }
         public string Zipcode { get; set; }
 
+        [Display(Name = "Confirm Pickup")]
+        public bool ConfirmPickup { get; set; }
+
+        [Display(Name = "Charges Applied")]
+        public double WeeklyCharges { get; set; }
+
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
         public ApplicationUser ApplicationUser { get; set; }
+
 
     }
 }

@@ -194,6 +194,70 @@
     <Compile Include="Migrations\201909051934044_Updatinguser.Designer.cs">
       <DependentUpon>201909051934044_Updatinguser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909052040242_Updatingusercreatescreen.cs" />
+    <Compile Include="Migrations\201909052040242_Updatingusercreatescreen.Designer.cs">
+      <DependentUpon>201909052040242_Updatingusercreatescreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909061437017_Updatepickup.cs" />
+    <Compile Include="Migrations\201909061437017_Updatepickup.Designer.cs">
+      <DependentUpon>201909061437017_Updatepickup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909061540081_Updatepickup1.cs" />
+    <Compile Include="Migrations\201909061540081_Updatepickup1.Designer.cs">
+      <DependentUpon>201909061540081_Updatepickup1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909061639198_Updatepickup2.cs" />
+    <Compile Include="Migrations\201909061639198_Updatepickup2.Designer.cs">
+      <DependentUpon>201909061639198_Updatepickup2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909061700499_Updatepickup3.cs" />
+    <Compile Include="Migrations\201909061700499_Updatepickup3.Designer.cs">
+      <DependentUpon>201909061700499_Updatepickup3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909061706356_Updatepickup4.cs" />
+    <Compile Include="Migrations\201909061706356_Updatepickup4.Designer.cs">
+      <DependentUpon>201909061706356_Updatepickup4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909061738567_UpdateEditScreen1.cs" />
+    <Compile Include="Migrations\201909061738567_UpdateEditScreen1.Designer.cs">
+      <DependentUpon>201909061738567_UpdateEditScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909062006502_UpdateBilldetails.cs" />
+    <Compile Include="Migrations\201909062006502_UpdateBilldetails.Designer.cs">
+      <DependentUpon>201909062006502_UpdateBilldetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909091429207_FirstMigrations1.cs" />
+    <Compile Include="Migrations\201909091429207_FirstMigrations1.Designer.cs">
+      <DependentUpon>201909091429207_FirstMigrations1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909091503489_FirstMigrations2.cs" />
+    <Compile Include="Migrations\201909091503489_FirstMigrations2.Designer.cs">
+      <DependentUpon>201909091503489_FirstMigrations2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909091650542_FirstMigration.cs" />
+    <Compile Include="Migrations\201909091650542_FirstMigration.Designer.cs">
+      <DependentUpon>201909091650542_FirstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909091742038_PickupSchedule.cs" />
+    <Compile Include="Migrations\201909091742038_PickupSchedule.Designer.cs">
+      <DependentUpon>201909091742038_PickupSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909091940507_pickupadded.cs" />
+    <Compile Include="Migrations\201909091940507_pickupadded.Designer.cs">
+      <DependentUpon>201909091940507_pickupadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909092012009_FirstMigration1.cs" />
+    <Compile Include="Migrations\201909092012009_FirstMigration1.Designer.cs">
+      <DependentUpon>201909092012009_FirstMigration1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909092154472_FirstMigrations3.cs" />
+    <Compile Include="Migrations\201909092154472_FirstMigrations3.Designer.cs">
+      <DependentUpon>201909092154472_FirstMigrations3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909100149447_FirstMigrations4.cs" />
+    <Compile Include="Migrations\201909100149447_FirstMigrations4.Designer.cs">
+      <DependentUpon>201909100149447_FirstMigrations4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountManager.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -311,6 +375,9 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Shared\_LayoutCustomer.cshtml" />
     <Content Include="Views\Shared\_LayoutEmployee.cshtml" />
+    <Content Include="Views\Customers\CustomerIndex.cshtml" />
+    <Content Include="Views\Customers\View.cshtml" />
+    <Content Include="Views\Customers\RequestPickup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -332,6 +399,54 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909051934044_Updatinguser.resx">
       <DependentUpon>201909051934044_Updatinguser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909052040242_Updatingusercreatescreen.resx">
+      <DependentUpon>201909052040242_Updatingusercreatescreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061437017_Updatepickup.resx">
+      <DependentUpon>201909061437017_Updatepickup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061540081_Updatepickup1.resx">
+      <DependentUpon>201909061540081_Updatepickup1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061639198_Updatepickup2.resx">
+      <DependentUpon>201909061639198_Updatepickup2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061700499_Updatepickup3.resx">
+      <DependentUpon>201909061700499_Updatepickup3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061706356_Updatepickup4.resx">
+      <DependentUpon>201909061706356_Updatepickup4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061738567_UpdateEditScreen1.resx">
+      <DependentUpon>201909061738567_UpdateEditScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909062006502_UpdateBilldetails.resx">
+      <DependentUpon>201909062006502_UpdateBilldetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909091429207_FirstMigrations1.resx">
+      <DependentUpon>201909091429207_FirstMigrations1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909091503489_FirstMigrations2.resx">
+      <DependentUpon>201909091503489_FirstMigrations2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909091650542_FirstMigration.resx">
+      <DependentUpon>201909091650542_FirstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909091742038_PickupSchedule.resx">
+      <DependentUpon>201909091742038_PickupSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909091940507_pickupadded.resx">
+      <DependentUpon>201909091940507_pickupadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909092012009_FirstMigration1.resx">
+      <DependentUpon>201909092012009_FirstMigration1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909092154472_FirstMigrations3.resx">
+      <DependentUpon>201909092154472_FirstMigrations3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909100149447_FirstMigrations4.resx">
+      <DependentUpon>201909100149447_FirstMigrations4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

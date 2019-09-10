@@ -18,16 +18,37 @@ namespace Trash_Collector.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var customers = db.Customers.Include(c => c.ApplicationUser);
-            return View(customers.ToList());
+            var currentUserId = User.Identity.GetUserId();
+
+            var currentcustomer= db.Customers.Include(s=>s.ApplicationUser).Where(c => c.ApplicationId == currentUserId).ToList();
+            return View(currentcustomer);
         }
 
+        //GET: Current Customer Bill Details
+        public ActionResult BillDetails()
+        {
+            var currentUserId = User.Identity.GetUserId();
+
+            var currentcustomer = db.Customers.Include(s => s.ApplicationId).Where(c => c.ApplicationId == currentUserId);
+            return View(currentcustomer);
+        }
+        //GET: Current Customer Details
+        public ActionResult CustomerDetails()
+        {
+            var currentUserId = User.Identity.GetUserId();
+
+            var currentcustomer = db.Customers.Include(s => s.ApplicationUser).Where(c => c.ApplicationId == currentUserId);
+            return View(currentcustomer);
+        }
         // GET: Customers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                var currentUserId = User.Identity.GetUserId();
+                var currentcustomer = db.Customers.Where(s => s.ApplicationId == currentUserId).Single();
+                return View(currentcustomer);
+                    
             }
             Customer customer = db.Customers.Find(id);
             if (customer == null)
@@ -49,15 +70,16 @@ namespace Trash_Collector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,Balance,StreetAddress,City,State,Zipcode,DaysofWeek,ApplicationId,UserRoles,Email,UserName,Password,ConfirmPassword")] Customer customer)
+        public ActionResult Create([Bind(Include = "Id,FirstName,LastName,StreetAddress,City,State,Zipcode,TrashDay,ExtraPickUp,")] Customer customer)
         {
-            if (ModelState.IsValid)
-            {
-                customer.ApplicationId = User.Identity.GetUserId();
+            var userId = User.Identity.GetUserId();
+            customer.ApplicationId = userId;
+            customer.UserRoles = "Customer";
+            
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");
-            }
+            
 
             ViewBag.ApplicationId = new SelectList(db.Users, "Id", "Email", customer.ApplicationId);
             return View(customer);
@@ -84,7 +106,7 @@ namespace Trash_Collector.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Balance,StreetAddress,City,State,Zipcode,DaysofWeek,ApplicationId,UserRoles,Email,UserName,Password,ConfirmPassword")] Customer customer)
+        public ActionResult Edit([Bind(Include = "Id,FirstName,LastName,Balance,StreetAddress,City,State,Zipcode,TrashDay,ApplicationId,UserRoles,Email,UserName,RequestPickup,Password,ConfirmPassword,ExtraPickUp")] Customer customer)
         {
             if (ModelState.IsValid)
             {

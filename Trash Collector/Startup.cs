@@ -17,9 +17,9 @@ namespace Trash_Collector
         private void createRolesandUsers()
         {
             ApplicationDbContext db = new ApplicationDbContext();
-            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+            
             var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(db));
-
+            var UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
 
 
            

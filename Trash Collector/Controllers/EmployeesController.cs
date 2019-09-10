@@ -130,5 +130,34 @@ namespace Trash_Collector.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult ServiceDetails(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(customer);
+        }
+    //    public ActionResult ConfirmPickup()
+    //    {
+    //        var currentUId = User.Identity.GetUserId();
+    //        var pickupComplete = db.Employees.Where(e => e.ConfirmPickup).FirstOrDefault();
+    //        if (pickupComplete = true)
+    //        {
+    //            return currentUId;
+    //            ChargeCustomer(customer);
+    //        }
+
+    //        if employee selects checkbox(= true)
+    //    then ChargeCustomer(double weeklyCharges) for the week
     }
-}
+
+
+    }    
+
+
